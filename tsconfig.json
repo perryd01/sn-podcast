@@ -1,0 +1,17 @@
+{
+	"extends": "@tsconfig/next/tsconfig.json",
+	"compilerOptions": {
+		"baseUrl": "./src/",
+		"paths": { "@/*": ["*"], "*": [""] },
+		"importsNotUsedAsValues": "error",
+		"strict": true
+	},
+	"include": [
+		"*.config.js",
+		"*.config.mjs",
+		"next-env.d.ts",
+		"**/*.ts",
+		"**/*.tsx"
+	],
+	"exclude": ["node_modules"]
+}
