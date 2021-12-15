@@ -24,13 +24,13 @@ export function EpisodeCard({
 					<div className="flex flex-col">
 						<h1 className="text-sm font-bold ">{name}</h1>
 						<div className="flex flex-row gap-2 text-xs">
-							<div className="flex gap-2 items-center">
+							<div className="flex gap-1 items-center">
 								<span>
 									<BsFillStopwatchFill />
 								</span>
 								<p>{Math.round(duration_ms / 1000 / 60)} perc</p>
 							</div>
-							<div className="flex flex-row gap-2 items-center">
+							<div className="flex flex-row gap-1 items-center">
 								<span>
 									<BsFillCalendarDateFill />
 								</span>
