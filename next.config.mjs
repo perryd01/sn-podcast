@@ -10,6 +10,9 @@ const nextConfig = {
 		strictPostcssConfiguration: true,
 	},
 	reactStrictMode: true,
+	images: {
+		domains: ["i.scdn.co", "placekitten.com"],
+	},
 };
 
 export default withPlugins(

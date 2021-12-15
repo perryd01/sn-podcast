@@ -25,6 +25,7 @@
 		"simple-import-sort/exports": "error",
 		"sort-imports": "off",
 		"import/order": "off",
+		"tailwindcss/no-custom-classname": ["off", {}],
 
 		/* Custom preferences */
 		"@typescript-eslint/array-type": "error",

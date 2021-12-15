@@ -12,6 +12,9 @@ module.exports = {
 				roboto: ["Roboto", ...defaultTheme.fontFamily.sans],
 				"noto-sans": ["Noto Sans", ...defaultTheme.fontFamily.serif],
 			},
+			borderRadius: {
+				"figma-base": "24px",
+			},
 			colors: {
 				iair: {
 					darkblue: "#196BAD",
@@ -23,6 +26,16 @@ module.exports = {
 					facebook: "#4267B2",
 					instagram: "#e95950",
 					tiktok: "#ff0050",
+				},
+				material: {
+					blue: {
+						light: "#CBE6FF",
+						"light-text": "#0B1D46",
+					},
+					purple: {
+						lightpurple: "#DAE1FF",
+						"light-text": "#131D48",
+					},
 				},
 			},
 			boxShadow: {

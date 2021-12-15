@@ -1,13 +1,20 @@
+import { EpisodeCard } from "./EpisodeCard";
+
 type EpisodeListProps = {
-	episodes?: any;
-	limit: number | "none";
+	title: string;
+	episodes: SpotifyApi.EpisodeObjectSimplified[];
+	limit?: number;
 };
 
-export function EpisodeList(): EpisodeListProps {
+export function EpisodeList({ title, episodes, limit }: EpisodeListProps) {
 	return (
-		<div>
-			<h1>Legutóbbi epizódok:</h1>
-			<p>asd</p>
+		<div className="my-8">
+			<h1 className="mb-4 text-xl font-medium">{title}</h1>
+			<div className="flex flex-col gap-8">
+				{episodes.slice(0, limit ?? episodes.length).map((e) => (
+					<EpisodeCard {...e} key={e.id} />
+				))}
+			</div>
 		</div>
 	);
 }

@@ -33,12 +33,14 @@
 		"react-dom": "^17.0.2",
 		"react-icons": "^4.3.1",
 		"react-polymorphic-types": "^2.0.0",
+		"spotify-web-api-node": "^5.0.2",
 		"tailwindcss": "^3.0.1"
 	},
 	"devDependencies": {
 		"@tsconfig/next": "^1.0.1",
 		"@types/node": "^16.11.12",
 		"@types/react": "^17.0.37",
+		"@types/spotify-web-api-node": "^5.0.4",
 		"@typescript-eslint/eslint-plugin": "^5.6.0",
 		"@typescript-eslint/parser": "^5.6.0",
 		"cross-env": "^7.0.3",
