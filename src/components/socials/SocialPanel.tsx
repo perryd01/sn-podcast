@@ -15,7 +15,10 @@ type SocialPanelProps = {
 export function SocialPanel({ classname }: SocialPanelProps) {
 	return (
 		<div
-			className={clsx("flex flex-row gap-4 justify-around p-2 my-2", classname)}
+			className={clsx(
+				"flex flex-row gap-4 justify-around p-2 my-2 mx-auto max-w-2xl",
+				classname,
+			)}
 		>
 			<a
 				href="https://www.facebook.com/influenceairpodcast"

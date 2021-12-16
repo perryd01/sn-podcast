@@ -22,7 +22,7 @@ export default function SelectedEpisodePage({
 				<meta name="description" content={mainText} />
 			</Head>
 			<article className="my-4">
-				<div className="relative mb-8 w-full h-64">
+				<div className="relative mb-8 w-full h-64 lg:h-80">
 					<Image
 						src={images[0].url}
 						layout="fill"
@@ -31,26 +31,21 @@ export default function SelectedEpisodePage({
 						alt="Az epizód indexképe"
 					/>
 				</div>
-				<h1 className="mb-6 text-3xl font-bold">{name}</h1>
+				<h1 className="mb-6 text-3xl lg:text-4xl font-bold">{name}</h1>
 				<div className="flex flex-row gap-4">
 					<InfoTag
 						icon={<BsFillStopwatchFill />}
 						text={`${Math.round(duration_ms / 1000 / 60)} perc`}
-						classname=""
 					/>
-					<InfoTag
-						icon={<BsFillCalendarDateFill />}
-						text={release_date}
-						classname=""
-					/>
+					<InfoTag icon={<BsFillCalendarDateFill />} text={release_date} />
 				</div>
 
 				<BaseCard color="blue">
-					<p>{mainText}</p>
+					<p className="lg:text-lg">{mainText}</p>
 				</BaseCard>
 
 				<BaseCard color="purple">
-					<p className="break-all">{eplinks}</p>
+					<p className="lg:text-lg break-all">{eplinks}</p>
 				</BaseCard>
 			</article>
 		</>

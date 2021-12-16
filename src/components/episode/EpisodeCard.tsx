@@ -23,8 +23,8 @@ export function EpisodeCard({
 						/>
 					</div>
 					<div className="flex flex-col">
-						<h1 className="text-sm font-bold ">{name}</h1>
-						<div className="flex flex-row gap-2 text-xs">
+						<h1 className="text-sm lg:text-lg font-bold">{name}</h1>
+						<div className="flex flex-row gap-2 text-xs lg:text-base">
 							<div className="flex gap-1 items-center">
 								<span>
 									<BsFillStopwatchFill />
