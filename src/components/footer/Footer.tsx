@@ -1,8 +1,15 @@
+import { HeaderLink } from "../header/HeaderLink";
+
 export function Footer() {
 	const email = "example@example.hu";
 	const phone = "+36 00 000 000";
 	return (
 		<footer className="flex flex-col justify-center items-center p-8 w-full font-noto-sans text-white bg-gray-900">
+			<ul className="flex flex-row gap-4 mb-6">
+				<HeaderLink text="Főoldal" href="/" />|
+				<HeaderLink text="Epizódok" href="/epizodok" />|
+				<HeaderLink text="Rólunk" href="/rolunk" />
+			</ul>
 			<p className="text-center">
 				Az InfluenceAir Podcastot a{" "}
 				<a

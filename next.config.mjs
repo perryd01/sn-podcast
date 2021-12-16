@@ -13,6 +13,10 @@ const nextConfig = {
 	images: {
 		domains: ["i.scdn.co", "placekitten.com"],
 	},
+	i18n: {
+		locales: ["hu"],
+		defaultLocale: "hu",
+	},
 };
 
 export default withPlugins(
