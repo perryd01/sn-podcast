@@ -1,6 +1,7 @@
 import "@/styles.css";
 import "@/polyfills";
 
+import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
 import type { AppProps } from "next/app";
 import Head from "next/head";
 import { useRouter } from "next/router";
@@ -21,7 +22,19 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 				/>
 			</Head>
 			<PageLayout>
-				<Component {...pageProps} />
+				<LazyMotion features={domAnimation}>
+					<AnimatePresence exitBeforeEnter>
+						<m.div
+							key={useRouter().route}
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							exit={{ opacity: 0 }}
+							transition={{ duration: 0.3 }}
+						>
+							<Component {...pageProps} />
+						</m.div>
+					</AnimatePresence>
+				</LazyMotion>
 			</PageLayout>
 		</>
 	);
