@@ -3,7 +3,7 @@ import clsx from "clsx";
 type InfoTagProps = {
 	icon: any;
 	text: string;
-	classname: string;
+	classname?: string;
 };
 
 export function InfoTag({ icon, text, classname }: InfoTagProps) {
@@ -11,7 +11,7 @@ export function InfoTag({ icon, text, classname }: InfoTagProps) {
 		<div>
 			<div
 				className={clsx(
-					"flex flex-row gap-2 justify-center items-center py-1 px-1 w-32 rounded-figma-base bg-material-purple-lightpurple",
+					"flex flex-row gap-2 justify-center items-center py-1 px-3 lg:text-lg font-medium rounded-figma-base bg-material-purple-lightpurple",
 					classname,
 				)}
 			>

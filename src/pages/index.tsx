@@ -12,7 +12,7 @@ export default function Page({
 		<div>
 			<ShortIntroduction />
 			<SocialPanel classname="rounded-full shadow-figma-base  text-3xl bg-white text-black" />
-			<EpisodeList title="Legutóbbi adásaink" episodes={episodes} limit={3} />
+			<EpisodeList title="Legutóbbi adásaink" episodes={episodes} limit={4} />
 		</div>
 	);
 }
