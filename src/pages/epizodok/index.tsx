@@ -1,4 +1,5 @@
 import type { InferGetServerSidePropsType } from "next";
+import Head from "next/head";
 import { useState } from "react";
 
 import { EpisodeList } from "@/components/episode/EpisodeList";
@@ -22,14 +23,19 @@ export default function EpisodesPage({
 			),
 	);
 	return (
-		<div>
-			<SearchBar
-				numOfHits={filteredEpisodes.length}
-				text={searchQuery}
-				onChange={setSearchQuery}
-			/>
-			<EpisodeList episodes={filteredEpisodes} title="Epizódok" />
-		</div>
+		<>
+			<Head>
+				<title>Epizódok | InfluencAir Podcast</title>
+			</Head>
+			<div>
+				<SearchBar
+					numOfHits={filteredEpisodes.length}
+					text={searchQuery}
+					onChange={setSearchQuery}
+				/>
+				<EpisodeList episodes={filteredEpisodes} title="Epizódok" />
+			</div>
+		</>
 	);
 }
 

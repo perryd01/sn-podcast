@@ -8,6 +8,7 @@ export function ShortIntroduction() {
 					src="http://placekitten.com/g/200/300"
 					layout="fill"
 					className="rounded-sm"
+					alt="InfluencAir Podcast logo"
 				/>
 			</div>
 			<h1 className="mt-8 text-2xl font-black text-center">
