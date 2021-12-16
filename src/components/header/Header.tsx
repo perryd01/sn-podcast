@@ -39,6 +39,7 @@ export function Header() {
 				<AnimatePresence exitBeforeEnter>
 					<m.nav
 						animate={isOpen ? "open" : "closed"}
+						initial={{ opacity: 0 }}
 						variants={{
 							open: { opacity: 1, y: 0 },
 							closed: { opacity: 0, y: "-100%" },
