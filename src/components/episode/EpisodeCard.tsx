@@ -16,7 +16,7 @@ export function EpisodeCard({
 				<div className="flex flex-row gap-2 items-center ">
 					<div className="relative flex-shrink-0 w-20 h-20">
 						<Image
-							src={images[0].url}
+							src={images[1].url}
 							layout="fill"
 							className="rounded-figma-base"
 							alt="az epizód indexképe"
