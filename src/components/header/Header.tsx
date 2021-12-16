@@ -30,8 +30,9 @@ export function Header() {
 			</nav>
 
 			<LazyMotion features={domAnimation}>
-				<AnimatePresence exitBeforeEnter>
+				<AnimatePresence>
 					<m.nav
+						key="navbar"
 						animate={isOpen ? "open" : "closed"}
 						initial={{ opacity: 0 }}
 						variants={{

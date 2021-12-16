@@ -5,6 +5,7 @@ export function ShortIntroduction() {
 		<div className="my-4 font-noto-sans">
 			<div className="relative flex-shrink-0 justify-center mx-auto w-32 lg:w-48 h-32 lg:h-48">
 				<Image
+					priority
 					src="http://placekitten.com/g/200/300"
 					layout="fill"
 					className="rounded-sm"

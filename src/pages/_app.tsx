@@ -23,7 +23,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 			</Head>
 			<PageLayout>
 				<LazyMotion features={domAnimation}>
-					<AnimatePresence exitBeforeEnter>
+					<AnimatePresence exitBeforeEnter key="pageTransition">
 						<m.div
 							key={useRouter().route}
 							initial={{ opacity: 0 }}
