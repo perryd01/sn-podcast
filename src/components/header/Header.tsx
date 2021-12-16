@@ -36,7 +36,7 @@ export function Header() {
 
 			<div
 				className={clsx(
-					"lg:hidden font-noto-sans text-2xl lowercase",
+					"lg:hidden font-noto-sans text-2xl text-center lowercase",
 					!isOpen && "hidden",
 				)}
 			>
