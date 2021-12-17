@@ -2,14 +2,13 @@ import { MenuIcon } from "@heroicons/react/outline";
 import clsx from "clsx";
 import { AnimatePresence, domAnimation, LazyMotion, m } from "framer-motion";
 import Link from "next/link";
-import { Router, useRouter } from "next/router";
+import { Router } from "next/router";
 import { useState } from "react";
 
 import { HeaderLink } from "./HeaderLink";
 
 export function Header() {
 	const [isOpen, setIsOpen] = useState(false);
-	const router = useRouter();
 
 	Router.events.on("routeChangeStart", () => {
 		setIsOpen(false);
@@ -41,7 +40,7 @@ export function Header() {
 						}}
 						transition={{ duration: 0.2, delay: 0.1 }}
 						className={clsx(
-							"lg:hidden absolute z-30 w-full font-noto-sans text-2xl text-center lowercase bg-white rounded-b-figma-base shadow-figma-base",
+							"absolute z-30 w-full font-noto-sans text-2xl text-center lowercase bg-white rounded-b-figma-base shadow-figma-base",
 						)}
 					>
 						<ul className="flex flex-col gap-2 justify-center items-center pt-32 pb-16 h-full">
@@ -51,6 +50,9 @@ export function Header() {
 						</ul>
 					</m.nav>
 					<m.div
+						onClick={() => {
+							setIsOpen(false);
+						}}
 						animate={isOpen ? "open" : "closed"}
 						variants={{
 							open: { opacity: 0.5 },
