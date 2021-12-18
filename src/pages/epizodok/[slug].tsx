@@ -1,52 +1,57 @@
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
+import type { Entry } from "contentful";
 import type { GetStaticProps } from "next";
 import Head from "next/head";
 import Image from "next/image";
 import { BsFillCalendarDateFill, BsFillStopwatchFill } from "react-icons/bs";
 
-import { BaseCard } from "@/components/content/BaseCard";
+import type { IEpisodeFields } from "@/@types/generated/contentful";
 import { InfoTag } from "@/components/episode/InfoTag";
-import { purifyDescription } from "@/util/content";
+import { getEpisodes, getOneEpisode } from "@/util/contentful";
+import { renderOptions } from "@/util/renderOptions";
 import { generateSlug } from "@/util/slug";
-import { getEpsiodes, getOneEpisode } from "@/util/spotify";
 
 export default function SelectedEpisodePage({
-	episode: { name, description, duration_ms, release_date, images },
+	episode,
 }: {
-	episode: SpotifyApi.EpisodeObjectSimplified;
+	episode: Entry<IEpisodeFields>;
 }) {
-	const [mainText, eplinks, restText] = purifyDescription(description);
+	const { fields } = episode;
+	const { title, guestName, cover, description, releaseDate } = fields;
 	return (
 		<>
 			<Head>
-				<title>{name} | InfluenceAir Podcast</title>
-				<meta name="description" content={mainText} />
+				<title>{`${title} - ${guestName}`} | InfluenceAir Podcast</title>
+				<meta name="description" content={title} />
 			</Head>
 			<article className="my-4">
 				<div className="relative mb-8 w-full h-64 lg:h-80">
 					<Image
-						src={images[0].url}
+						src={
+							cover
+								? `https:${cover.fields.file.url}`
+								: "https://placekitten.com/500/500"
+						}
 						layout="fill"
 						objectFit="cover"
 						className="rounded-figma-base"
 						alt="Az epizód indexképe"
 					/>
 				</div>
-				<h1 className="mb-6 text-3xl lg:text-4xl font-bold">{name}</h1>
+				<h1 className="mb-6 text-3xl lg:text-4xl font-bold">{`${title} - ${guestName}`}</h1>
 				<div className="flex flex-row gap-4">
 					<InfoTag
 						icon={<BsFillStopwatchFill />}
-						text={`${Math.round(duration_ms / 1000 / 60)} perc`}
+						text={`${Math.round(5 / 1000 / 60)} perc`}
 					/>
-					<InfoTag icon={<BsFillCalendarDateFill />} text={release_date} />
+					<InfoTag
+						icon={<BsFillCalendarDateFill />}
+						text={new Date(releaseDate).toLocaleDateString("hu")}
+					/>
 				</div>
-
-				<BaseCard color="blue">
-					<p className="lg:text-lg">{mainText}</p>
-				</BaseCard>
-
-				<BaseCard color="purple">
-					<p className="lg:text-lg break-all">{eplinks}</p>
-				</BaseCard>
+				<div className="my-16 max-w-none prose lg:prose-xl">
+					{documentToReactComponents(description, renderOptions)}
+				</div>
 			</article>
 		</>
 	);
@@ -62,10 +67,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export const getStaticPaths = async () => {
-	const allEpisodes = await getEpsiodes();
+	const allEpisodes = await getEpisodes();
 	return {
 		paths:
-			allEpisodes.map(({ name }) => `/epizodok/${generateSlug(name)}`) ?? [],
+			allEpisodes.items.map(
+				({ fields }) => `/epizodok/${generateSlug(fields.title)}`,
+			) ?? [],
 		fallback: false,
 	};
 };

@@ -1,6 +1,7 @@
 import clsx from "clsx";
 
 type InfoTagProps = {
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	icon: any;
 	text: string;
 	classname?: string;
