@@ -1,6 +1,9 @@
 import { createClient } from "contentful";
 
-import { IAboutFields, IEpisodeFields } from "@/@types/generated/contentful";
+import type {
+	IAboutFields,
+	IEpisodeFields,
+} from "@/@types/generated/contentful";
 
 const client = createClient({
 	space: process.env.NEXT_CONTENTFUL_SPACE_ID ?? "ErrorNoSpaceID",
