@@ -1,8 +1,8 @@
 import clsx from "clsx";
-import type { IconType } from "react-icons";
 
 type InfoTagProps = {
-	icon: IconType;
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	icon: any;
 	text: string;
 	classname?: string;
 };
