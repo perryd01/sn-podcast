@@ -11,7 +11,7 @@ const nextConfig = {
 	},
 	reactStrictMode: true,
 	images: {
-		domains: ["i.scdn.co", "placekitten.com"],
+		domains: ["placekitten.com", "images.ctfassets.net"],
 	},
 	i18n: {
 		locales: ["hu"],

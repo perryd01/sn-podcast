@@ -1,17 +1,19 @@
-import type { InferGetServerSidePropsType } from "next";
+import type { EntryCollection } from "contentful";
+import type { InferGetStaticPropsType } from "next";
 import Head from "next/head";
 import { useState } from "react";
 
+import type { IEpisodeFields } from "@/@types/generated/contentful";
 import { EpisodeList } from "@/components/episode/EpisodeList";
 import { SearchBar } from "@/components/search/SearchBar";
-import { getEpsiodes } from "@/util/spotify";
+import { getEpisodes } from "@/util/contentful";
 
 export default function EpisodesPage({
 	episodes,
-}: InferGetServerSidePropsType<typeof getStaticProps>) {
+}: InferGetStaticPropsType<typeof getStaticProps>) {
 	const [searchQuery, setSearchQuery] = useState("");
-	const filteredEpisodes = episodes.filter((e) =>
-		e.name
+	const filteredEpisodes = episodes.items.filter(({ fields }) =>
+		`${fields.title} - ${fields.guestName} - ${fields.epNumber}`
 			.toLowerCase()
 			.normalize("NFD")
 			.replace(/[^\w ]+/g, "")
@@ -33,7 +35,12 @@ export default function EpisodesPage({
 					text={searchQuery}
 					onChange={setSearchQuery}
 				/>
-				<EpisodeList episodes={filteredEpisodes} title="Epizódok" />
+				<EpisodeList
+					episodes={
+						{ items: filteredEpisodes } as EntryCollection<IEpisodeFields>
+					}
+					title="Epizódok"
+				/>
 			</div>
 		</>
 	);
@@ -42,7 +49,7 @@ export default function EpisodesPage({
 export const getStaticProps = async () => {
 	return {
 		props: {
-			episodes: await getEpsiodes(),
+			episodes: await getEpisodes(),
 		},
 		revalidate: 60 * 60 * 1,
 	};

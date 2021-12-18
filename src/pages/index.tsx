@@ -3,7 +3,7 @@ import type { InferGetServerSidePropsType } from "next";
 import { EpisodeList } from "@/components/episode/EpisodeList";
 import { ShortIntroduction } from "@/components/introduction/ShortIntroduction";
 import { SocialPanel } from "@/components/socials/SocialPanel";
-import { getEpsiodes } from "@/util/spotify";
+import { getEpisodes } from "@/util/contentful";
 
 export default function Page({
 	episodes,
@@ -20,7 +20,7 @@ export default function Page({
 export const getStaticProps = async () => {
 	return {
 		props: {
-			episodes: await getEpsiodes(),
+			episodes: await getEpisodes(),
 		},
 		revalidate: 60 * 60 * 1,
 	};

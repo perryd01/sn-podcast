@@ -1,4 +1,5 @@
 const defaultTheme = require("tailwindcss/defaultTheme");
+const typography = require("@tailwindcss/typography");
 
 module.exports = {
 	content: ["./src/**/*.{js,ts,tsx}"],
@@ -51,4 +52,5 @@ module.exports = {
 	corePlugins: {
 		animation: false,
 	},
+	plugins: [typography],
 };
