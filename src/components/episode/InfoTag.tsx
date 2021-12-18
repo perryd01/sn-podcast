@@ -1,7 +1,8 @@
 import clsx from "clsx";
+import type { IconType } from "react-icons";
 
 type InfoTagProps = {
-	icon: any;
+	icon: IconType;
 	text: string;
 	classname?: string;
 };
