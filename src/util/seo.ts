@@ -8,7 +8,7 @@ export const generateStructuredEpisodeData = (e: IEpisodeFields) => {
 	return {
 		"@context": "https://schema.org/",
 		"@type": "PodcastEpisode",
-		url: `https://${DOMAIN}/epizodok/${generateSlug(e.title, e.guestName)}`,
+		url: `https://${DOMAIN}/epizodok/${generateSlug(e.title)}`,
 		name: e.title,
 		datePublished: e.releaseDate,
 		description: e.description,
