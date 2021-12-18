@@ -23,5 +23,5 @@ export const getEpsiodes = async () => {
 
 export const getOneEpisode = async (slug: string | string[] | undefined) => {
 	const episodes = await getEpsiodes();
-	return episodes.filter((e) => generateSlug(e.name, "") === slug)[0];
+	return episodes.filter((e) => generateSlug(e.name) === slug)[0];
 };
