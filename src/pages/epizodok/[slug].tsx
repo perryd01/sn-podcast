@@ -24,9 +24,10 @@ export default function SelectedEpisodePage({
 				<title>{`${title} - ${guestName}`} | InfluenceAir Podcast</title>
 				<meta name="description" content={title} />
 			</Head>
-			<article className="my-4">
+			<article>
 				<div className="relative mb-8 w-full h-64 lg:h-80">
 					<Image
+						priority
 						src={
 							cover
 								? `https:${cover.fields.file.url}`
@@ -34,7 +35,7 @@ export default function SelectedEpisodePage({
 						}
 						layout="fill"
 						objectFit="cover"
-						className="rounded-figma-base"
+						className="rounded-lg"
 						alt="Az epizód indexképe"
 					/>
 				</div>
@@ -49,7 +50,7 @@ export default function SelectedEpisodePage({
 						text={new Date(releaseDate).toLocaleDateString("hu")}
 					/>
 				</div>
-				<div className="my-16 max-w-none prose lg:prose-xl">
+				<div className="my-8 max-w-none text-lg prose lg:prose-xl">
 					{documentToReactComponents(description, renderOptions)}
 				</div>
 			</article>

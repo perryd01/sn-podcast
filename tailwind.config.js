@@ -18,7 +18,7 @@ module.exports = {
 			},
 			colors: {
 				iair: {
-					darkblue: "#196BAD",
+					darkblue: "#103384",
 					lightblue: "#2192D6",
 				},
 				social: {

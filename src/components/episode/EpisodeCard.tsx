@@ -15,14 +15,14 @@ export function EpisodeCard({
 }: IEpisodeFields) {
 	return (
 		<Link href={`/epizodok/${generateSlug(title)}`} passHref>
-			<div className="p-4 hover:bg-opacity-80 rounded-figma-base transition duration-300 cursor-pointer text-material-blue-light-text bg-material-blue-light">
+			<div className="py-2 hover:bg-opacity-80 rounded-figma-base transition duration-300 cursor-pointer">
 				<div className="flex flex-row gap-2 items-center ">
 					<div className="relative flex-shrink-0 w-20 h-20">
 						<Image
 							src={`https:${cover?.fields.file.url}`}
 							layout="fill"
 							objectFit="cover"
-							className="rounded-figma-base"
+							className="rounded-lg"
 							alt="az epizód indexképe"
 						/>
 					</div>

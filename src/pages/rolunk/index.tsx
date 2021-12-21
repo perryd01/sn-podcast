@@ -21,12 +21,13 @@ export default function AboutPage({
 						src={`https:${cover?.fields.file.url}`}
 						layout="fill"
 						objectFit="cover"
+						className="rounded-lg"
 					/>
 				</div>
 				<div>
 					<h1 className="mb-4 text-xl lg:text-2xl font-medium">Rólunk</h1>
 				</div>
-				<div className="my-16 max-w-none prose lg:prose-xl">
+				<div className="my-8 max-w-none prose lg:prose-xl">
 					{documentToReactComponents(description, renderOptions)}
 				</div>
 			</div>
