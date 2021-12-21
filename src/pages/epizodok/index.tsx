@@ -27,7 +27,7 @@ export default function EpisodesPage({
 	return (
 		<>
 			<Head>
-				<title>Epizódok | InfluencAir Podcast</title>
+				<title>Epizódok</title>
 			</Head>
 			<div>
 				<SearchBar

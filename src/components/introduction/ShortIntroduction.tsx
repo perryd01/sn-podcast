@@ -9,7 +9,7 @@ export function ShortIntroduction() {
 					src="/cover.jpg"
 					layout="fill"
 					className="rounded-full"
-					alt="InfluencAir Podcast logo"
+					alt="InfluenceAir Podcast logo"
 				/>
 			</div>
 			<h1 className="mt-8 text-2xl lg:text-3xl font-black text-center">

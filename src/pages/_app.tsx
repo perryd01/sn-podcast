@@ -8,14 +8,28 @@ import { useRouter } from "next/router";
 
 import { PageLayout } from "@/components/layouts/PageLayout";
 
+const domain = process.env.NEXT_DOMAIN;
+
 export default function MyApp({ Component, pageProps }: AppProps) {
-	const domain = "localhost"; // TODO URL
-	const canonicalURL = `https://${domain}${useRouter().pathname}`;
 	return (
 		<>
 			<Head>
-				<title key="title">InfluencAir Podcast</title>
-				<link rel="canonical" href={canonicalURL} />
+				<title key="title">InfluenceAir Podcast</title>
+				<meta
+					name="description"
+					content="Podcast az influncermarketingről, elismert tartalomgyártókkal és szakértőkkel"
+				/>
+				<meta
+					name="og:description"
+					content="Podcast az influncermarketingről, elismert tartalomgyártókkal és szakértőkkel"
+				/>
+				<meta
+					name="twitter:description"
+					content="Podcast az influncermarketingről, elismert tartalomgyártókkal és szakértőkkel"
+				/>
+				<meta property="og:image" content="/cover.jpg" />
+				<meta property="twitter:image" content="/cover.jpg" />
+
 				<meta
 					name="color-scheme"
 					content="normal" // TODO: Set to "dark" or "light" based on theme
