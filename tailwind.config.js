@@ -27,6 +27,7 @@ module.exports = {
 					facebook: "#4267B2",
 					instagram: "#e95950",
 					tiktok: "#ff0050",
+					apple: "#B150E2",
 				},
 				material: {
 					blue: {

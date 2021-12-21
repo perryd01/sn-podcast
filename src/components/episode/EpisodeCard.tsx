@@ -1,9 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
-import { BsFillCalendarDateFill, BsFillStopwatchFill } from "react-icons/bs";
+import {
+	BsFillCalendarDateFill,
+	BsFillCircleFill,
+	BsFillStopwatchFill,
+} from "react-icons/bs";
 
 import type { IEpisodeFields } from "@/@types/generated/contentful";
 import { generateSlug } from "@/util/slug";
+
+import { InfoTag } from "./InfoTag";
 
 export function EpisodeCard({
 	title,
@@ -12,6 +18,7 @@ export function EpisodeCard({
 	season,
 	epNumber,
 	releaseDate,
+	length,
 }: IEpisodeFields) {
 	return (
 		<Link href={`/epizodok/${generateSlug(title)}`} passHref>
@@ -27,22 +34,20 @@ export function EpisodeCard({
 						/>
 					</div>
 					<div className="flex flex-col">
-						<h1 className="text-sm lg:text-lg font-bold">{`${title} - ${guestName} - S${season
-							.toString()
-							.padStart(2, "0")}E${epNumber.toString().padStart(2, "0")}`}</h1>
+						<h1 className="text-sm lg:text-lg font-bold">{`${title} - ${guestName}`}</h1>
 						<div className="flex flex-row gap-2 text-xs lg:text-base">
-							<div className="flex gap-1 items-center">
-								<span>
-									<BsFillStopwatchFill />
-								</span>
-								<p>{Math.round(1 / 1000 / 60)} perc</p>
-							</div>
-							<div className="flex flex-row gap-1 items-center">
-								<span>
-									<BsFillCalendarDateFill />
-								</span>
-								<p>{new Date(releaseDate).toLocaleDateString("hu")}</p>
-							</div>
+							<InfoTag
+								episode
+								icon={<BsFillCircleFill />}
+								text={`S${season.toString().padStart(2, "0")}E${epNumber
+									.toString()
+									.padStart(2, "0")}`}
+							/>
+							<InfoTag icon={<BsFillStopwatchFill />} text={`${length} perc`} />
+							<InfoTag
+								icon={<BsFillCalendarDateFill />}
+								text={new Date(releaseDate).toLocaleDateString("hu")}
+							/>
 						</div>
 					</div>
 				</div>

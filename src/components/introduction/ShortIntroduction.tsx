@@ -6,7 +6,7 @@ export function ShortIntroduction() {
 			<div className="relative flex-shrink-0 justify-center mx-auto w-48 lg:w-64 h-48 lg:h-64">
 				<Image
 					priority
-					src="http://placekitten.com/g/200/300"
+					src="/cover.jpg"
 					layout="fill"
 					className="rounded-full"
 					alt="InfluencAir Podcast logo"
