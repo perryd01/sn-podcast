@@ -22,6 +22,7 @@
 		"*.{js,ts,tsx}": "eslint --fix"
 	},
 	"dependencies": {
+		"@contentful/rich-text-plain-text-renderer": "^15.10.1",
 		"@contentful/rich-text-react-renderer": "^15.10.0",
 		"@contentful/rich-text-types": "^15.10.0",
 		"@heroicons/react": "^1.0.5",

@@ -14,6 +14,7 @@ import { InfoTag } from "@/components/episode/InfoTag";
 import { SocialPanel } from "@/components/socials/SocialPanel";
 import { getEpisodes, getOneEpisode } from "@/util/contentful";
 import { renderOptions } from "@/util/renderOptions";
+import { generateEpisodeSocialPreview } from "@/util/seo";
 import { generateSlug } from "@/util/slug";
 
 export default function SelectedEpisodePage({
@@ -35,11 +36,26 @@ export default function SelectedEpisodePage({
 		spotifyLink,
 		length,
 	} = fields;
+	const socialmetas = generateEpisodeSocialPreview(fields);
 	return (
 		<>
 			<Head>
-				<title>{`${title} - ${guestName}`} | InfluenceAir Podcast</title>
-				<meta name="description" content={title} />
+				<title>{socialmetas.title}</title>
+				<meta name="description" content={socialmetas.description} />
+
+				{/* facebook */}
+				<meta property="og:title" content={socialmetas.title} />
+				<meta property="og:type" content="website" />
+				<meta property="og:title" content={socialmetas.title} />
+				<meta property="og:description" content={socialmetas.description} />
+				<meta property="og:image" content={socialmetas.image} />
+
+				{/* twitter */}
+				<meta name="twitter:card" content="summary_large_image" />
+				<meta property="twitter:domain" content={socialmetas.domain} />
+				<meta name="twitter:title" content={socialmetas.title} />
+				<meta name="twitter:description" content={socialmetas.description} />
+				<meta name="twitter:image" content={socialmetas.image} />
 			</Head>
 			<article>
 				<div className="relative mb-8 w-full h-64 lg:h-80 -z-10">

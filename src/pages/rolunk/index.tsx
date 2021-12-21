@@ -13,7 +13,7 @@ export default function AboutPage({
 	return (
 		<>
 			<Head>
-				<title>Rólunk | InfluencAir Podcast</title>
+				<title>Rólunk | InfluenceAir Podcast</title>
 			</Head>
 			<div>
 				<div className="relative mb-4 w-full h-64 lg:h-96">
