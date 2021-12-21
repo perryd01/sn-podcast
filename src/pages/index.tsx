@@ -11,7 +11,15 @@ export default function Page({
 	return (
 		<div>
 			<ShortIntroduction />
-			<SocialPanel classname="rounded-full shadow-figma-base  text-3xl bg-white text-black" />
+			<SocialPanel
+				spotify="https://open.spotify.com/show/1oS0OnLaxlgnvgLKqBmT7X?si=cgDVseZ0TCqbvqSQ4Pxgkg"
+				apple="https://podcasts.apple.com/us/podcast/influenceair-podcast/id1598296623"
+				youtube="https://www.youtube.com/channel/UCxVuKBFit6CQR9gnbNLf-Mg"
+				facebook="https://www.facebook.com/influenceairpodcast"
+				instagram="https://www.instagram.com/influenceairpodcast/"
+				tiktok="https://www.tiktok.com/@influenceairpodcast"
+				classname="rounded-full shadow-figma-base  text-3xl bg-white text-black"
+			/>
 			<EpisodeList title="Legutóbbi adásaink" episodes={episodes} limit={4} />
 		</div>
 	);

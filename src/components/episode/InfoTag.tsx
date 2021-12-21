@@ -5,18 +5,19 @@ type InfoTagProps = {
 	icon: any;
 	text: string;
 	classname?: string;
+	episode?: boolean;
 };
 
-export function InfoTag({ icon, text, classname }: InfoTagProps) {
+export function InfoTag({ icon, text, classname, episode }: InfoTagProps) {
 	return (
 		<div>
 			<div
 				className={clsx(
-					"flex flex-row gap-2 justify-center items-center py-1 px-3 lg:text-lg font-medium rounded-figma-base bg-material-purple-lightpurple",
+					"flex flex-row gap-2 justify-center items-center lg:text-lg font-medium rounded-lg",
 					classname,
 				)}
 			>
-				<span>{icon}</span>
+				<span className={clsx(episode && "text-sky-500")}>{icon}</span>
 				<p>{text}</p>
 			</div>
 		</div>

@@ -16,7 +16,7 @@ export function Header() {
 
 	return (
 		<>
-			<nav className="flex z-40 justify-between items-center py-6 px-8 font-noto-sans">
+			<nav className="flex z-40 justify-between items-center py-6 px-8 font-noto-sans text-white bg-gradient-to-r from-iair-darkblue to-iair-lightblue">
 				<Link href="/" passHref>
 					<h1 className="text-xl font-bold cursor-pointer">influenceAir</h1>
 				</Link>
@@ -43,7 +43,7 @@ export function Header() {
 							"absolute z-30 w-full font-noto-sans text-2xl text-center lowercase bg-white rounded-b-figma-base shadow-figma-base",
 						)}
 					>
-						<ul className="flex flex-col gap-2 justify-center items-center pt-32 pb-16 h-full">
+						<ul className="flex flex-col gap-4 justify-center items-center pt-32 pb-16 h-full">
 							<HeaderLink text="Főoldal" href="/" />
 							<HeaderLink text="Epizódok" href="/epizodok" />
 							<HeaderLink text="Rólunk" href="/rolunk" />

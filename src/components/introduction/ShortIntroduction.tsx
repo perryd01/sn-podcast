@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export function ShortIntroduction() {
 	return (
-		<div className="my-4 font-noto-sans">
-			<div className="relative flex-shrink-0 justify-center mx-auto w-32 lg:w-48 h-32 lg:h-48">
+		<div className="font-noto-sans">
+			<div className="relative flex-shrink-0 justify-center mx-auto w-48 lg:w-64 h-48 lg:h-64">
 				<Image
 					priority
-					src="http://placekitten.com/g/200/300"
+					src="/cover.jpg"
 					layout="fill"
-					className="rounded-sm"
+					className="rounded-full"
 					alt="InfluencAir Podcast logo"
 				/>
 			</div>
